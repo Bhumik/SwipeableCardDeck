@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
 import android.widget.FrameLayout
-import androidx.core.view.ViewCompat
 
 class SwipeableCardDeck @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = R.attr.SwipeStyle) : BaseAdapterView<Adapter>(context, attrs, defStyle), SwipeableCardDeckPropertyEvent {
 
@@ -169,9 +168,6 @@ class SwipeableCardDeck @JvmOverloads constructor(context: Context, attrs: Attri
         child.scaleX = child.scaleX - (pos * SCALE_XY_OFFSET)
         child.scaleY = child.scaleY - (pos * SCALE_XY_OFFSET)
         child.y = child.translationY + (pos * TRANSLATION_Y_OFFSET)
-
-        ViewCompat.setElevation(child, 30f)
-
 
         addViewInLayout(child, 0, lp, true)
 
