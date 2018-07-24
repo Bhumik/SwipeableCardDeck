@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SwipeableCardDeck">
+        <attr name="SwipeStyle" format="reference" />
+        <attr name="rotation_degrees" format="float" />
+        <attr name="max_visible" format="integer" />
+        <attr name="allow_left_swipe" format="boolean" />
+        <attr name="allow_right_swipe" format="boolean" />
+        <attr name="allow_top_swipe" format="boolean" />
+        <attr name="allow_bottom_swipe" format="boolean" />
+    </declare-styleable>
+
+    <style name="SwipeStyle">
+        <item name="rotation_degrees">15</item>
+        <item name="max_visible">4</item>
+    </style>
+
+
+</resources>

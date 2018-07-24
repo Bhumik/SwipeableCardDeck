@@ -1,0 +1,27 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches/build_file_checksums.ser
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/captures
+.externalNativeBuild
+
+#built application files
+*.apk
+*.ap_
+
+
+# generated files
+bin/
+gen/
+/build
+/*/build
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Custom files
+/misc/keystore.properties
