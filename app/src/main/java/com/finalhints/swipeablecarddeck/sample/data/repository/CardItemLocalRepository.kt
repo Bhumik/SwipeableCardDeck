@@ -4,6 +4,9 @@ import com.finalhints.swipeablecarddeck.sample.R
 import com.finalhints.swipeablecarddeck.sample.datamodel.CardItem
 import java.util.*
 
+/**
+ * card date provider repo from local
+ */
 class CardItemLocalRepository : CardItemRepository {
 
     override fun getCardItems(): ArrayList<CardItem> {

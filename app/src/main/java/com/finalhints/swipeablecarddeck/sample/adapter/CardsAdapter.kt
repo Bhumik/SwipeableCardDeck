@@ -12,7 +12,7 @@ import com.finalhints.swipeablecarddeck.sample.datamodel.CardItem
 import java.util.*
 
 /**
- * Created by arjun on 4/25/16.
+ * card item adapter
  */
 class CardsAdapter(context: Context, private val cards: ArrayList<CardItem>) : ArrayAdapter<CardItem>(context, -1) {
 

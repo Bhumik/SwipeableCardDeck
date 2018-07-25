@@ -279,28 +279,28 @@ class SwipeableCardDeck @JvmOverloads constructor(context: Context, attrs: Attri
      * make top card swipe to left
      */
     fun makeSwipeLeft() {
-        //cardGestureSwipeListener?.selectLeft()
+        cardGestureSwipeListener?.animateOffScreenLeft()
     }
 
     /**
      * make top card swipe to left
      */
     fun makeSwipeRight() {
-        //cardGestureSwipeListener?.selectRight()
+        cardGestureSwipeListener?.animateOffScreenRight()
     }
 
     /**
      * make top card swipe to left
      */
     fun makeSwipeTop() {
-        //cardGestureSwipeListener?.selectTop()
+        cardGestureSwipeListener?.animateOffScreenTop()
     }
 
     /**
      * make top card swipe to bottom
      */
     fun makeSwipeBottom() {
-        //cardGestureSwipeListener?.selectBottom()
+        cardGestureSwipeListener?.animateOffScreenBottom()
     }
 
 

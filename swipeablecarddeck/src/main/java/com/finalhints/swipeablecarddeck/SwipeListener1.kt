@@ -11,6 +11,7 @@ class SwipeListener1(private var card: View, callback: SwipeCallback, rotation: 
 
     companion object {
         private var DEF_ROTATION_DEGREE = 15f
+        private var DEF_SWIPE_DURATION = 160
     }
 
     private var mRotationDegree = rotation
@@ -101,28 +102,6 @@ class SwipeListener1(private var card: View, callback: SwipeCallback, rotation: 
             animateOffScreenTop(160) { callback?.onCardExited() }
             callback?.topExit()
         } else if (isBeyondBottomPart()) {
-            /*
-            animateOffScreenBottom(160)
-                    .setListener(object : Animator.AnimatorListener {
-
-                        override fun onAnimationStart(animation: Animator) {
-
-                        }
-
-                        override fun onAnimationEnd(animation: Animator) {
-                            callback!!.onCardExited()
-                        }
-
-                        override fun onAnimationCancel(animation: Animator) {
-
-                        }
-
-                        override fun onAnimationRepeat(animation: Animator) {
-
-                        }
-                    })
-
-*/
             animateOffScreenBottom(160) { callback?.onCardExited() }
             callback?.bottomExit()
         } else {
@@ -165,10 +144,10 @@ class SwipeListener1(private var card: View, callback: SwipeCallback, rotation: 
                 .rotation(0f)
     }
 
-    private fun animateOffScreenLeft(duration: Int, callCallback: () -> Unit) {
+    fun animateOffScreenLeft(duration: Int = DEF_SWIPE_DURATION, callCallback: () -> Unit = { callback?.onCardExited() }) {
         card.animate()
                 .setDuration(duration.toLong())
-                .x(-parentWidth)
+                .x(-parentWidth * 2)
                 .y(0f)
                 .rotation(-30f)
                 .setListener(object : Animator.AnimatorListener {
@@ -187,7 +166,7 @@ class SwipeListener1(private var card: View, callback: SwipeCallback, rotation: 
                 })
     }
 
-    private fun animateOffScreenRight(duration: Int, callCallback: () -> Unit) {
+    fun animateOffScreenRight(duration: Int = DEF_SWIPE_DURATION, callCallback: () -> Unit = { callback?.onCardExited() }) {
         card.animate()
                 .setDuration(duration.toLong())
                 .x(parentWidth * 2)
@@ -209,7 +188,7 @@ class SwipeListener1(private var card: View, callback: SwipeCallback, rotation: 
                 })
     }
 
-    private fun animateOffScreenTop(duration: Int, callCallback: () -> Unit) {
+    fun animateOffScreenTop(duration: Int = DEF_SWIPE_DURATION, callCallback: () -> Unit = { callback?.onCardExited() }) {
         card.animate()
                 .setDuration(duration.toLong())
                 .x(0f)
@@ -231,7 +210,7 @@ class SwipeListener1(private var card: View, callback: SwipeCallback, rotation: 
                 })
     }
 
-    private fun animateOffScreenBottom(duration: Int, callCallback: () -> Unit) {
+    fun animateOffScreenBottom(duration: Int = DEF_SWIPE_DURATION, callCallback: () -> Unit = { callback?.onCardExited() }) {
         card.animate()
                 .setDuration(duration.toLong())
                 .x(0f)
@@ -275,7 +254,6 @@ class SwipeListener1(private var card: View, callback: SwipeCallback, rotation: 
     private fun topBorder(): Int {
         return (parentHeight / 4f).toInt()
     }
-
 
     interface SwipeCallback {
         fun leftExit()
